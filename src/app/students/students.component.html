@@ -1,0 +1,60 @@
+<mat-spinner *ngIf = "isDel"   mode="indeterminate" style="margin: auto; margin-bottom: 10px;"  ></mat-spinner>
+
+
+<div *ngIf = "students.length > 0 ; else noData">
+  <mat-accordion>
+  <mat-expansion-panel style="margin-bottom: 10px; margin-top: 10px;" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title style="align-content: center;">
+        Data Of Students
+      </mat-panel-title>
+      <mat-panel-description>
+        <p *ngIf="panelOpenState; else elseBlock"></p>
+        <ng-template #elseBlock> </ng-template>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+  <mat-accordion>
+    <mat-expansion-panel style="margin-bottom: 10px;" *ngFor="let item of students" (opened)="panelOpenState = true"
+                                  (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Student : {{item.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          <p *ngIf="panelOpenState; else elseBlock">Click to Hide {{item.name}} data</p>
+          <ng-template #elseBlock>Click here to see {{item.name}} data</ng-template>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Name: {{item.name}}</p>
+      <p>Branch: {{item.branch}}</p>
+      <p>Email : {{item.email}}</p>
+      <mat-action-row *ngIf="checkAuth() &&  checkcreatorid_studentid(item.creator)">
+        <div class="example-button-container" style="margin-right:40%;" >
+          <button mat-fab color="accent" [routerLink]="['/edit',item._id]" aria-label="Example icon button with a delete icon" style="height: 90%;  width: 30%;margin-right: 10%;">
+            <mat-icon> border_color</mat-icon>
+          </button>
+          <!--
+          <button (click)="onDelete(item._id)"  mat-fab color="warn" aria-label="Example icon button with a delete icon" style="height: 90%;  width: 30%;">
+            <mat-icon>delete</mat-icon>
+          </button>
+          -->
+          <button mat-button (click)="openDialog(item._id)"  mat-fab color="warn" aria-label="Example icon button with a delete icon" style="height: 90%;  width: 30%;">  
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </mat-action-row>
+    </mat-expansion-panel>
+    <mat-paginator
+    [length]="pageLength"
+    [pageSize]="currPageSize"
+    [pageSizeOptions]="pageOptions"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+  </mat-accordion>
+  </mat-expansion-panel>
+  
+  </mat-accordion>
+</div>
+<ng-template #noData>
+  <h1 style="text-align: center; margin-top: 250px;"> Do Not Have Any Data!!!Please Insert It First... </h1>
+</ng-template>

@@ -1,0 +1,9 @@
+.card-container {
+    width: 25%;
+    margin: auto;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  

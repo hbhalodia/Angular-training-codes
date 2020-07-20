@@ -1,0 +1,52 @@
+<mat-progress-bar mode="indeterminate" *ngIf = "isShow" ></mat-progress-bar>
+<mat-card class="card-container">
+    <form (submit)="onSave(studentForm)" #studentForm="ngForm">
+      <mat-card-header class="card-header">
+        <div mat-card-avatar class="header-avatar"></div>
+        <mat-card-subtitle>Registration</mat-card-subtitle>
+      </mat-card-header>
+      <mat-form-field>
+        <input
+        type="text"
+        name="name"
+        [ngModel]="std?.name"
+        matInput
+        placeholder="Enter name"
+        required
+        #name="ngModel"
+        >
+        <mat-error *ngIf="name.invalid">Name is required</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input
+        type="text"
+        name="branch"
+        [ngModel]="std?.branch"
+        matInput
+        placeholder="Enter branch"
+        required
+        #branch="ngModel"
+        >
+        <mat-error *ngIf="branch.invalid">branch is required</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input
+        type="email"
+        name="email"
+        [ngModel]="std?.email"
+        matInput
+        placeholder="Enter email"
+        required
+        email
+        #email="ngModel"
+        >
+        <mat-error *ngIf="email.invalid">Email is required</mat-error>
+      </mat-form-field>
+      <mat-card-actions>
+        <button mat-raised-button type="submit">Save</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+  

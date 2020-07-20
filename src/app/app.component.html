@@ -1,0 +1,85 @@
+<mat-toolbar style ="margin-bottom: 30px;"color="warn">
+  <div class="header-items">
+    <a  mat-raised-button color="accent" routerLink="student">Students</a>
+  </div>
+  <ul>
+    <li *ngIf="checkAuth();">
+      <a mat-raised-button color="accent" routerLink="create">New Student</a>
+    </li>
+    <li *ngIf="!checkAuth();">
+      <a mat-raised-button color="accent" routerLink="login">Login</a>
+    </li>
+    <li *ngIf="!checkAuth();">
+      <a mat-raised-button color="accent" routerLink="signup">Sign Up</a>
+    </li>
+    <li *ngIf="checkAuth();">
+      <a mat-raised-button routerLink="logout" color="accent" >Logout</a>
+    </li>
+  </ul>
+</mat-toolbar>
+
+<main>
+  <router-outlet></router-outlet>
+  <notifier-container></notifier-container>
+</main>
+<!--
+<app-radio-button></app-radio-button>
+<br>
+<br>
+<br>
+<br>
+<app-check-box></app-check-box>
+<br>
+<br>
+<br>
+<app-autocomplete></app-autocomplete>
+<br><br><br>
+<app-drop-down-menu></app-drop-down-menu>-->
+<!--<app-login-form-basics></app-login-form-basics>_-->
+<!--<app-ang-basics></app-ang-basics>-->
+<!--
+<p>Lets try to reuse this componernt</p>
+-->
+<!--<app-ang-basics></app-ang-basics>-->
+<!--
+<div class="main-container">
+   String Interpolation
+    <Custom_input *ngFor="let lab of labells " input-label={{lab}}></Custom_input>
+    <br>
+</div>
+
+<input type="text" [(ngModel)]="userInput">
+<button (click)="onClick()"> Add</button>
+<br>
+<br>
+<br>
+<input type="text" [(ngModel)]="rUserInput">
+<button (click)="remove()">Remove</button>
+<br>                                                    
+<br>
+
+<ul *ngFor="let name of names">
+  <li *ngIf="name == 'Rajkot'" >{{name}}</li>
+</ul>
+
+
+<ul *ngFor="let data of studata">
+  <li *ngIf="data.marks > 70 || data.marks ==70">
+    {{data.name}} [{{data.marks}}]
+  </li>
+</ul>
+-->
+<!--
+<div class="main-container">
+  <button (click)="show = !show">{{ show ? "hide" : "show" }}</button>
+  <p [ngClass]="{ 'green': show, 'red': !show }">show = {{ show }}</p>
+  <br />
+ 
+  <div *ngIf="show; else elseBlock">Text to show</div>
+
+  <ng-template #elseBlock>
+    Alternate text while primary text is hidden
+  </ng-template>
+</div>
+
+-->
