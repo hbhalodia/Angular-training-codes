@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { student } from '../sudent';
 import { ManageNamesService } from '../manage-names.service';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 
 
 @Component({
@@ -20,7 +20,7 @@ export class NewStudentComponent implements OnInit {
   stdId = ""
   std:student
   
-  constructor(private  nameService: ManageNamesService,private route : ActivatedRoute) { }
+  constructor(private  nameService: ManageNamesService,private route : ActivatedRoute, private router : Router) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(data =>{
