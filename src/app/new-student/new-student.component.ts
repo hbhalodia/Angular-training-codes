@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { student } from '../sudent';
 import { ManageNamesService } from '../manage-names.service';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router'
+import { ActivatedRoute } from '@angular/router'
 
 
 @Component({
@@ -20,7 +20,7 @@ export class NewStudentComponent implements OnInit {
   stdId = ""
   std:student
   
-  constructor(private  nameService: ManageNamesService,private route : ActivatedRoute, private router : Router) { }
+  constructor(private  nameService: ManageNamesService,private route : ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(data =>{
@@ -50,7 +50,6 @@ export class NewStudentComponent implements OnInit {
     } else {
       this.nameService.updateStudent(this.stdId, studentForm.value.name, studentForm.value.branch,studentForm.value.email).subscribe(response => {
         console.log("Update Api Success: "+ JSON.stringify(response))
-        this.router.navigate(['/student']);
       });
     }
      setTimeout(() => 
