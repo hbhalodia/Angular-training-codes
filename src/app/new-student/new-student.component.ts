@@ -50,6 +50,7 @@ export class NewStudentComponent implements OnInit {
     } else {
       this.nameService.updateStudent(this.stdId, studentForm.value.name, studentForm.value.branch,studentForm.value.email).subscribe(response => {
         console.log("Update Api Success: "+ JSON.stringify(response))
+        this.router.navigate(['/student']);
       });
     }
      setTimeout(() => 
