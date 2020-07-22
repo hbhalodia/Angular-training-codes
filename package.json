@@ -8,12 +8,9 @@
   "scripts": {
     "ng": "ng",
     "start": "node startup.js",
-    "build": "ng build",
-    "test": "ng test",
+    "postinstall": "ng build --aot --prod",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "start-dev": "nodemon server.js",
-    "postinstall": "ng build --aot --prod"
+    "e2e": "ng e2e"   
   },
   "private": true,
   "dependencies": {
