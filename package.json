@@ -2,8 +2,8 @@
   "name": "my-app",
   "version": "0.0.0",
   "engines": {
-    "node": "v8.11.4",
-    "npm": "5.8.0"
+    "node": "v12.18.2",
+    "npm": "6.14.5"
   },
   "scripts": {
     "ng": "ng",
@@ -13,7 +13,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start-dev": "nodemon server.js",
-    "postinstall": "ng build --output-path angularapp  --aot --prod"
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -28,22 +28,15 @@
     "@angular/platform-browser-dynamic": "~9.1.6",
     "@angular/router": "~9.1.6",
     "angular-notifier": "^6.0.1",
-    "@angular/cli": "^7.1.2",
-    "@angular/compiler-cli": "^6.1.10",
-    "bcrypt": "^5.0.0",
-    "body-parse": "^0.1.0",
+    "@angular/cli": "~9.1.5",
+    "@angular/compiler-cli": "~9.1.6",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.18",
-    "mongoose-unique-validator": "^2.0.3",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.5",
-    "@angular/cli": "~9.1.5",
-    "@angular/compiler-cli": "~9.1.6",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
