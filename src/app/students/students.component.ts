@@ -67,6 +67,7 @@ export class StudentsComponent implements OnInit {
       this.nameService.getStudents(this.currPageSize,1).subscribe(data => {
           this.students=data.students;
         this.pageLength=data.maxStudents;
+        this.currPageIndex=0;
         });
     });
     
