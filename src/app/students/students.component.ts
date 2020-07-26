@@ -64,7 +64,7 @@ export class StudentsComponent implements OnInit {
           this.isDel = false
       },
       1000);
-      this.nameService.getStudents(this.currPageSize,this.currPageIndex+1).subscribe(data => {
+      this.nameService.getStudents(this.currPageSize,1).subscribe(data => {
           this.students=data.students;
         this.pageLength=data.maxStudents;
         });
