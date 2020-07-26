@@ -1,5 +1,32 @@
 <mat-spinner *ngIf = "isDel"   mode="indeterminate" style="margin: auto; margin-bottom: 10px;"  ></mat-spinner>
 
+<!--
+<div>
+  <h1>Angular HTML Table Example</h1>
+  <table>
+     <thead>
+        <tr>
+           <th>Name</th>
+           <th>Branch</th>
+           <th>Email</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr *ngFor="let item of students">
+           <th>{{ item.name}}</th>
+           <td>{{ item.branch }}</td>
+           <td>{{ item.email }}</td>
+        </tr>
+     </tbody>
+  </table>
+  <mat-paginator
+    [length]="pageLength"
+    [pageSize]="currPageSize"
+    [pageSizeOptions]="pageOptions"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+</div>
+-->
 
 <div *ngIf = "students.length > 0 ; else noData">
   <mat-accordion>
@@ -33,11 +60,7 @@
           <button mat-fab color="accent" [routerLink]="['/edit',item._id]" aria-label="Example icon button with a delete icon" style="height: 90%;  width: 30%;margin-right: 10%;">
             <mat-icon> border_color</mat-icon>
           </button>
-          <!--
-          <button (click)="onDelete(item._id)"  mat-fab color="warn" aria-label="Example icon button with a delete icon" style="height: 90%;  width: 30%;">
-            <mat-icon>delete</mat-icon>
-          </button>
-          -->
+          
           <button mat-button (click)="openDialog(item._id)"  mat-fab color="warn" aria-label="Example icon button with a delete icon" style="height: 90%;  width: 30%;">  
             <mat-icon>delete</mat-icon>
           </button>
@@ -48,7 +71,6 @@
     [length]="pageLength"
     [pageSize]="currPageSize"
     [pageSizeOptions]="pageOptions"
-    [pageindex]="pageindex"
     (page)="onPageChange($event)">
   </mat-paginator>
   </mat-accordion>

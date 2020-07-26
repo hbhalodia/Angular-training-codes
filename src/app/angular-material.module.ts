@@ -13,6 +13,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
     exports: [
@@ -29,8 +30,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatInputModule,
         MatToolbarModule,
         MatCheckboxModule,
-        MatExpansionModule
-
+        MatExpansionModule,
+        MatTableModule
     ]
 })
 
